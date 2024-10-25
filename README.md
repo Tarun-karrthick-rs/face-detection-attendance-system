@@ -36,7 +36,3 @@ This project implements a face detection-based attendance system using Python, O
 - Pickle
 - A webcam
 
-## Usage
-1. Install the required packages.
-   ```bash
-   pip install opencv-python numpy scikit-learn
