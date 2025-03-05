@@ -7,6 +7,7 @@ This project implements a face detection-based attendance system using Python, O
 - Machine learning with K-Nearest Neighbors (KNN) for face recognition.
 - Attendance records stored in CSV format for easy access and review.
 - Automatic timestamp generation for attendance marking.
+- **Database deletion feature** to remove stored face data.
 
 ## Technologies Used
 - **Python**
@@ -22,11 +23,13 @@ This project implements a face detection-based attendance system using Python, O
 - **names.pkl**: Stores the corresponding names of the faces.
 - **haarcascade_frontalface_default.xml**: Pre-trained XML file for detecting faces using OpenCV.
 - **Attendance_<date>.csv**: File where the attendance records (Name and Timestamp) are stored for each session.
+- **delete_data.py**: Script to delete stored face data (`face_data.pkl` and `names.pkl`).
 
 ## How It Works
-1. **Face Data Collection**: Run the `collect_faces.py` script to capture a specified number of face samples from the webcam, resize them, and store the data in `data/face_data.pkl`. Corresponding names are saved in `data/names.pkl`.
-2. **Face Recognition and Attendance**: Run the `attendance.py` script, which loads the stored face data and applies the KNN algorithm to detect and recognize faces in real-time using the webcam. When a face is recognized, the system logs the student's name and the timestamp in a CSV file for attendance.
-3. **CSV Output**: Attendance records are saved in a CSV file with the format `Attendance_<current_date>.csv`. Each row contains the student's name and the time they were recognized.
+1. **Face Data Collection**: Run the `dataset.py` script to capture a specified number of face samples from the webcam, resize them, and store the data in `data/face_data.pkl`. Corresponding names are saved in `data/names.pkl`.
+2. **Face Recognition and Attendance**: Run the `attend.py` script, which loads the stored face data and applies the KNN algorithm to detect and recognize faces in real-time using the webcam. When a face is recognized, the system logs the student's name and the timestamp in a CSV file for attendance.
+3. **Database Deletion**: Run `delete_data.py` to delete the stored face data (`face_data.pkl` and `names.pkl`) if a reset is required.
+4. **CSV Output**: Attendance records are saved in a CSV file with the format `Attendance_<current_date>.csv`. Each row contains the student's name and the time they were recognized.
 
 ## Requirements
 - Python 3.x
@@ -35,4 +38,3 @@ This project implements a face detection-based attendance system using Python, O
 - Scikit-learn
 - Pickle
 - A webcam
-
